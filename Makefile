@@ -17,7 +17,7 @@ $(OBJ_DIR):
 	mkdir $(OBJ_DIR)
 
 $(OBJ_DIR)/%: %.c
-	$(CC) -o $@ $(CFLAGS) $<
+	$(CC) -g -o $@ $(CFLAGS) $<
 
 clean:
 	rm -rf $(OBJ_DIR)
