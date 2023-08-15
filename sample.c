@@ -53,12 +53,17 @@ int test_db()
     return 0;
 }
 
+void printMessage() {
+	printf("*** printMessage ***\n");
+}
+
+/*
 int addnum(int a, int b) {
     if (a == 42) {
         return a*b;
     }
     return a + b;
-}
+}*/
 
 int main() {
 	Person *person;
@@ -70,6 +75,7 @@ int main() {
     printf("result = %d\n", result);
     switch (result) {
     case 0:
+    	printMessage();
     	break;
     case 1:
     	break;
