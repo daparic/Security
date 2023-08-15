@@ -57,13 +57,12 @@ void printMessage() {
 	printf("*** printMessage ***\n");
 }
 
-/*
 int addnum(int a, int b) {
     if (a == 42) {
         return a*b;
     }
     return a + b;
-}*/
+}
 
 int main() {
 	Person *person;
