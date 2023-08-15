@@ -61,6 +61,18 @@ int addnum(int a, int b) {
 }
 
 int main() {
-    printf("result = %d\n", addnum(3, 4));
+	Person *person;
+	printf("Name: %s\n", person->name);
+	printf("Salary: %d\n", person->salary);
+	printf("Day's pay: %d\n", person->salary / person->daysWorkedInPassedMonth);
+
+	int result = addnum(3, 4);
+    printf("result = %d\n", result);
+    switch (result) {
+    case 0:
+    	break;
+    case 1:
+    	break;
+    }
     return 0;
 }
