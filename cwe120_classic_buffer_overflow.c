@@ -111,7 +111,7 @@ int valid_roomnum(const roomnum_t rn)
     return (rn >= 1) && (rn <= 9999);
 }
 
-size_t get_nlines(const char * const filename)
+static size_t get_nlines(const char * const filename)
 {
     FILE * f = NULL;
     size_t nlines = 0;
@@ -236,7 +236,7 @@ guest_reservation_t * read_hotel_book(const char * const filename,
     return reservations;
 }
 
-int _get_line(const char * const prompt,
+static int _get_line(const char * const prompt,
              char * const buffer,
              const int buffer_size)
 {
@@ -274,7 +274,7 @@ int _get_line(const char * const prompt,
     return input_size;
 }
 
-char * repeat_char(const char c,
+static char * repeat_char(const char c,
                    char * const buffer,
                    const size_t buffer_size,
                    const size_t count)
@@ -489,7 +489,7 @@ void tui_printall(guest_reservation_t * reservations,
     }
 }
 
-void tui(const char * const filename)
+static void tui(const char * const filename)
 {
     size_t num_reservations = 0;
     guest_reservation_t * reservations = read_hotel_book(filename, &num_reservations);
@@ -539,7 +539,7 @@ void tui(const char * const filename)
     free(reservations);
 }
 
-void usage()
+static void usage()
 {
     fputs("Usage: demo120 [-h] -f file\n", stderr);
     fputs("   Hotel reservation booking system.\n", stderr);

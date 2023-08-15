@@ -4,7 +4,7 @@
 #define BUFFER_SIZE 4096
 #define PORT 8080
 
-int get_message(char * const buffer, const size_t buffer_size, size_t * const bytesread)
+static int get_message(char * const buffer, const size_t buffer_size, size_t * const bytesread)
 {
     int server_fd = -1;
     int opt = 1;
