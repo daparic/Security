@@ -194,14 +194,14 @@ void print_image_format(const char * const filename)
     free(fn);
 }
 
-void usage()
+static void usage()
 {
     fputs("Usage: demo134 [-h] -f file\n", stderr);
     fputs("    Detect image file format.\n", stderr);
     exit(-1);
 }
 
-int main(int argc, char *argv[])
+static int main(int argc, char *argv[])
 {
     int opt;
     char filename[MAX_PATH_LENGTH + 1] = {0};

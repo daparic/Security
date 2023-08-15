@@ -21,7 +21,7 @@ typedef struct recipe {
     size_t num_ingredients;
 } recipe;
 
-unsigned int _get_line(const char * const prompt,
+static unsigned int _get_line(const char * const prompt,
              char * const buffer,
              const size_t buffer_size)
 {
@@ -74,7 +74,7 @@ size_t count_char(const char * const str, const char c)
     return count;
 }
 
-size_t get_nlines(const char * const filename)
+static size_t get_nlines(const char * const filename)
 {
     FILE * f = NULL;
     size_t nlines = 0;
@@ -99,7 +99,7 @@ size_t get_nlines(const char * const filename)
     return nlines;
 }
 
-char * repeat_char(const char c,
+static char * repeat_char(const char c,
                    char * const buffer,
                    const size_t buffer_size,
                    const size_t count )
@@ -479,7 +479,7 @@ void serve_drink(item_amount * items,
     printf("Served a %s (%s).\n", selected_recipe->long_name, selected_recipe->short_name);
 }
 
-void tui(const char * const stock_filename, const char * const recipes_filename)
+static void tui(const char * const stock_filename, const char * const recipes_filename)
 {
     size_t num_items = 0;
     item_amount * items = parse_stock(stock_filename, &num_items);
@@ -542,14 +542,14 @@ void tui(const char * const stock_filename, const char * const recipes_filename)
     free(recipes);
 }
 
-void usage()
+static void usage()
 {
     fputs("Usage: demo121 [-h] -s stock_file -r recipes_file\n", stderr);
     fputs("   Bartending Software Suite\n", stderr);
     exit(-1);
 }
 
-int main(int argc, char ** argv)
+static int main(int argc, char ** argv)
 {
     int opt = 0;
     char stock_filename[MAX_PATH_LENGTH + 1] = {0};

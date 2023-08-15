@@ -3,7 +3,7 @@
 #define BUFFER_SIZE 1024
 #define PORT 8080
 
-int get_message(char * const buffer, const size_t buffer_size, size_t * const bytesread)
+static int get_message(char * const buffer, const size_t buffer_size, size_t * const bytesread)
 {
     int server_fd = -1;
     struct sockaddr_in address;
@@ -124,7 +124,7 @@ size_t list_directory(const char * const path, const size_t path_size, char * co
 }
 
 
-int main(int argc, char * argv[])
+static int main(int argc, char * argv[])
 {
     char req[BUFFER_SIZE] = {0};
     size_t req_size = 0;

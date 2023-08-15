@@ -141,14 +141,14 @@ unsigned char * read_file(const char * const filename, size_t * const bytesread)
     return buffer;
 }
 
-void usage()
+static void usage()
 {
     fputs("Usage: demo131 [-h] -f file\n", stderr);
     fputs("    Sanitize HTML entity characters.\n", stderr);
     exit(-1);
 }
 
-int main(int argc, char* argv[])
+static int main(int argc, char* argv[])
 {
     int opt = 0;
     char filename[MAX_PATH_LENGTH + 1] = {0};
